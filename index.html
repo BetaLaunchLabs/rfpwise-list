@@ -100,6 +100,24 @@
   gtag('config', 'G-JY1WF73060');
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const ctaLinks = document.querySelectorAll('.cta-wrapper');
+
+    ctaLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        const label = this.getAttribute('data-label') || 'CTA Button Click';
+        gtag('event', 'click', {
+          event_category: 'CTA Button',
+          event_label: label,
+          value: 1
+        });
+      });
+    });
+  });
+</script>
+
+
 <body>
   <header>
     <h1>🧠 RFPWise.AI – Smarter Proposal Writing. Waste Less Time.</h1>
@@ -115,9 +133,9 @@
   <section class="cta">
     <h2>✅ Sign up to try the Beta Version</h2>
     <p>Join the early access list to test RFPWise.AI for free.</p>
-    <a href="https://forms.gle/M9gLFWtink7c3m8n7" target="https://forms.gle/M9gLFWtink7c3m8n7">
-      <button>Apply for Early Access</button>
-    </a>
+    <a href="https://forms.gle/M9gLFWtink7c3m8n7" target="_blank" class="cta-wrapper" data-label="Apply for Early Access">
+      <button class="cta-button">Apply for Early Access</button>
+    </a>    
   </section>
 
   <main>
@@ -167,9 +185,10 @@
       <h2>✅ Get Early Access</h2>
       <p>We’re launching a closed beta with a small group of users who want to shape the future of proposal generation.<br />
         📬 Sign up now to get access when the Beta version is released.</p>
-      <a href="https://forms.gle/M9gLFWtink7c3m8n7" target="https://forms.gle/M9gLFWtink7c3m8n7">
-        <button>Save My Spot</button>
+      <a href="https://forms.gle/M9gLFWtink7c3m8n7" target="_blank" class="cta-wrapper" data-label="Save My Spot">
+        <button class="cta-button">Save My Spot</button>
       </a>
+        
       <p style="margin-top: 1rem; font-size: 0.9rem; color: #aaa;">
         We’ll contact you shortly with onboarding details. No spam. No obligation.
       </p>
